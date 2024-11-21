@@ -1,8 +1,9 @@
 :root {
-  --bg: #282c34;
-  --header: #fff;
-  --link: #61dafb;
-  --text: hsla(0, 0%, 100%, 0.88);
+  --bg: #282c34; /* Background color */
+  --header-title: white; /* Title (Overreacted) color */
+  --header-subtext: white; /* "Personal blog by" color */
+  --link: pink; /* Link and article title color */
+  --text: white; /* General text color */
 }
 
 body {
@@ -21,6 +22,7 @@ h3 {
   font-weight: 900;
 }
 
+/* App container styling */
 .App {
   margin-left: auto;
   margin-right: auto;
@@ -28,32 +30,80 @@ h3 {
   max-width: 700px;
 }
 
+/* Header styling */
 header h1 {
   font-size: 3em;
+  color: var(--header-title); /* Title color */
+  text-align: left; /* Align Overreacted to the left */
+  margin-bottom: 1rem;
 }
 
+header p {
+  color: var(--header-subtext); /* Personal blog by text in white */
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* About section styling */
 aside {
   display: flex;
+  align-items: center;
   margin-bottom: 3rem;
 }
 
 aside img {
-  width: 50px;
-  height: 50px;
+  width: 100px; /* Larger profile image */
+  height: 100px;
   border-radius: 50%;
   margin-right: 1rem;
   background-color: black;
 }
 
+aside p span:first-child {
+  color: var(--link); /* Pink for Dan Abramov text */
+  font-weight: bold;
+}
+
+aside p span:last-child {
+  color: var(--text); /* White for additional text */
+}
+
+/* Article styling */
 article {
   margin-bottom: 3rem;
+  background-color: var(--bg);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+article h3 {
+  color: var(--link); /* Pink for article titles */
+  margin-bottom: 0.5rem;
+}
+
+article small {
+  color: var(--text); /* White for metadata (date, minutes to read) */
 }
 
 article p {
   margin-top: 0.25rem;
+  color: var(--text); /* White for article preview text */
 }
 
-article h3 {
-  color: var(--link);
-  margin-bottom: 0rem;
+/* Adjustments for responsive design */
+@media (max-width: 768px) {
+  .App {
+    padding: 1.5rem 1rem;
+  }
+
+  aside {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  aside img {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
 }
